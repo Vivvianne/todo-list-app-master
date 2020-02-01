@@ -15,13 +15,18 @@ export class TodoService {
   }
 
   addTitle(title: string) {
+    var today = new Date().toLocaleString();
+    console.log(today);
     this.toDolist.push({
       title: title,
-      isChecked: false
+      dateAdded : today,
+      dateChecked: " ",
+      isChecked: false,
     })
   }
   checkOrUnCheckTitle($key: string, flag: boolean){
-    this.toDolist.update($key, { isChecked: flag});
+    var today = new Date().toLocaleString();
+    this.toDolist.update($key, { isChecked: flag, dateChecked: today});
   }
   removeTitle($key: string){
     this.toDolist.remove($key);
