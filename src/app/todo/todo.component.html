@@ -21,7 +21,9 @@
                     <span class="hover-cursor" [class.text-success]="item.isChecked" (click)="alterCheck(item.$key,item.isChecked)">
                                         <i class="fa fa-lg" [ngClass]="item.isChecked?'fa-check-circle-o':'fa-circle-thin'"></i>
                                     </span> {{item.title}}
-                    <span style="margin-left: 150px; font-size: 12px;"> {{ item.dateAdded }} </span>
+                    <div style="margin-left: 150px; text-indent: 50px;">
+                        <span style="margin-left: 150px; font-size: 12px;"> {{ item.dateAdded }} </span>
+                    </div>
                     <span class="hover-cursor text-danger pull-right" (click)="onDelete(item.$key)">
                                         <i class="fa fa-trash-o fa-lg"></i>
                                     </span>
