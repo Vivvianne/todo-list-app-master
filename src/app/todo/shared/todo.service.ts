@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
+import { StringMap } from '@angular/compiler/src/compiler_facade_interface';
 
 @Injectable({
   providedIn: 'root'
@@ -32,3 +33,5 @@ export class TodoService {
     this.toDolist.remove($key);
   }
 }
+
+
