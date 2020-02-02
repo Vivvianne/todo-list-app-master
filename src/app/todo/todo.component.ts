@@ -22,14 +22,16 @@ export class TodoComponent implements OnInit {
         x["$key"] = element.key;
         this.toDoListArray.push(x);
       })
+      console.log(this.toDoListArray);
       this.toDoListArray.sort((a,b) => {
         return a.isChecked - b.isChecked;
       })
     });
   }
-  onAdd(itemTitle) {
-    this.toDoService.addTitle(itemTitle.value);
+  onAdd(itemTitle, itemDueDate) {
+    this.toDoService.addTitle(itemTitle.value, itemDueDate.value);
     itemTitle.value = null;
+    itemDueDate.value = null;
   }
   alterCheck($key: string,isChecked) {
     this.toDoService.checkOrUnCheckTitle($key,!isChecked);

@@ -14,11 +14,11 @@ export class TodoService {
     return this.toDolist;
   }
 
-  addTitle(title: string) {
+  addTitle(title: string, dueDate: string) {
     var today = new Date().toLocaleString();
-    console.log(today);
     this.toDolist.push({
       title: title,
+      dueDate:dueDate,
       dateAdded : today,
       dateChecked: " ",
       isChecked: false,
