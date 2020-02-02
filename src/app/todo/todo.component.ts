@@ -24,7 +24,7 @@ export class TodoComponent implements OnInit {
       })
       console.log(this.toDoListArray);
       this.toDoListArray.sort((a,b) => {
-        return a.isChecked - b.isChecked;
+        return +new Date(a.dueDate) - +new Date(b.dueDate);
       })
     });
   }
